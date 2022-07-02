@@ -11,14 +11,14 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         min_price = prices[0]
-        max_prof = prices[0]
-        for i in range(len(prices)):
-            if prices[i] < min_price:
-                min_price = prices[i]
-            elif prices[i] - min_price > max_prof:
-                max_prof = prices[i] - min_price
+        max_prof = 0
+        for val in prices:
+            if val < min_price:
+                min_price = val
+            elif (val-min_price) > max_prof:
+                max_prof = val-min_price
         return max_prof
-
+        
     '''
     # Brute force
     
